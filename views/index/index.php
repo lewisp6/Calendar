@@ -10,4 +10,5 @@
 <title>Homepage</title>
 
 <a href="/register">Register</a><br/>
-<a href="/login">Login</a>
+<a href="/login">Login</a><br/>
+<a href="/calendar">Calendar</a>

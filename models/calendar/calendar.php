@@ -18,4 +18,19 @@ class calendar {
         $daysInMonth = cal_days_in_month(CAL_GREGORIAN, $month, $year);
         return $daysInMonth;
     }
+
+    public function setMonthYear($month = null, $year = null)
+    {
+        $monthYear = array(
+            'month' =>  date('n'),
+            'year'  =>  date('Y')
+        );
+
+        if ($month && $year) {
+            $monthYear['month'] = $month;
+            $monthYear['year'] = $year;
+        }
+
+        return $monthYear;
+    }
 }

@@ -22,7 +22,6 @@ class LoginForm extends Model
     public function rules()
     {
         return [
-            // username and password are both required
             [['email', 'password'], 'required'],
             // password is validated by validatePassword()
             ['password', 'validatePassword'],

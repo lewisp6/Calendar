@@ -39,4 +39,30 @@ class calendarTest extends TestCase {
         $calendar->getDaysForMonth(null, 2015);
     }
 
+    public function testNoMonthOrYearSupplied()
+    {
+        $calendar = new calendar();
+        $monthYear = $calendar->setMonthYear();
+
+        $expected = array(
+            'month' =>  date('n'),
+            'year'  =>  date('Y')
+        );
+
+        $this->assertEquals($expected, $monthYear);
+    }
+
+    public function testMonthAndYearSupplied()
+    {
+        $calendar = new calendar();
+        $monthYear = $calendar->setMonthYear(12, 2014);
+
+        $expected = array(
+            'month' => 12,
+            'year'  =>  2014
+        );
+
+        $this->assertEquals($expected, $monthYear);
+    }
+
 }
