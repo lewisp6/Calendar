@@ -38,6 +38,8 @@ class User extends ActiveRecord
         $this->email = $email;
         $this->password = $passwordHash;
         $this->save();
+
+        return $this;
     }
 
     public function findByEmail($email)

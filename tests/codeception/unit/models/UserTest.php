@@ -2,16 +2,24 @@
 
 namespace tests\codeception\unit\models;
 
+use app\models\db\ActiveRecord\User;
 use yii\codeception\TestCase;
+use \Codeception\Util\Stub;
 
 class UserTest extends TestCase
 {
-    protected function setUp()
+    public function testValidatePasswordTrue()
     {
-        parent::setUp();
-        // uncomment the following to load fixtures for user table
-        //$this->loadFixtures(['user']);
+        $user = new User();
+        $user->password = 'password';
+
+        $this->assertTrue($user->validatePassword('password'));
     }
 
-    // TODO add test methods here
+    public function testValidatePasswordFalse()
+    {
+        $user = new User();
+        $user->password = 'djifosjfisd';
+        $this->assertFalse($user->validatePassword('password'));
+    }
 }
