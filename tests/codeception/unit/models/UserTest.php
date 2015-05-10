@@ -4,7 +4,6 @@ namespace tests\codeception\unit\models;
 
 use app\models\db\ActiveRecord\User;
 use yii\codeception\TestCase;
-use \Codeception\Util\Stub;
 
 class UserTest extends TestCase
 {
